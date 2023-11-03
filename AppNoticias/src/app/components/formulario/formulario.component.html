@@ -1,0 +1,23 @@
+<div class="jumbotron mt-5">
+    <h2 class="heading">Filtra noticias por pais y categoria</h2>
+
+    <div class="row mt-3">
+        <div class="col-lg-8 offset-lg-2">
+            <form (ngSubmit)="searchNews()">
+                <div class="form-group">
+                    <select name="categoria" class="form-control form-control-lg" [(ngModel)]="categoriaSeleccionada">
+                        <option *ngFor="let categoria of categorias" [value]="categoria.value">{{categoria.nombre}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="pais" class="form-control form-control-lg" [(ngModel)]="paisSeleccionado">
+                        <option *ngFor="let pais of paises" [value]="pais.value">{{pais.nombre}}
+                    </select>
+                </div>
+                <button type="submit" class="bt btn-primary btn-block btn-lg">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+</div>
